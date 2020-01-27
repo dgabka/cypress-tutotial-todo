@@ -1,5 +1,5 @@
 install:
-  stage: install
+  stage: build
   script:
     - npm install
   artifacts:
@@ -18,14 +18,11 @@ build:
     paths:
       - build
     expire_in: 30 mins
-  dependencies:
-    - install
 
 test:e2e:
-  stage: quality
+  stage: test
   image: cypress/base:10
   dependencies:
-    - install
     - build
   script:
     - npm run cy:ci
