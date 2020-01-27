@@ -5,6 +5,11 @@ stages:
   - build
   - test
 
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+
+
 install:
   stage: install
   script:
@@ -14,7 +19,7 @@ install:
     paths:
       - .npm/
       - node_modules/
-      - .cache/Cypress
+      - cache/Cypress
 
 build:
   stage: build
