@@ -1,7 +1,9 @@
-install:
+build:
+  image: node:lts-alpine
   stage: build
   script:
     - npm install
+    - CI=false npm run build
   artifacts:
     name: "artifacts"
     untracked: true
@@ -9,15 +11,7 @@ install:
     paths:
       - .npm/
       - node_modules/
-
-build:
-  stage: build
-  script:
-    - CI=false npm run build
-  artifacts:
-    paths:
       - build
-    expire_in: 30 mins
 
 test:e2e:
   stage: test
