@@ -13,7 +13,7 @@ variables:
 install:
   stage: install
   script:
-    - npm install
+    - npm ci
   artifacts:
     expire_in: 60 mins
     paths:
