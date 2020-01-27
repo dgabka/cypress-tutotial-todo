@@ -1,7 +1,7 @@
 {
   "name": "cypress-tutorial-build-todo-starter",
   "version": "1.0.0",
-  "description": "",rm
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
