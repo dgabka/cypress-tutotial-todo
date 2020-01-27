@@ -1,4 +1,4 @@
-image: node
+image: cypress/base
 
 stages:
   - install
@@ -10,8 +10,6 @@ install:
   script:
     - npm install
   artifacts:
-    name: "artifacts"
-    untracked: true
     expire_in: 60 mins
     paths:
       - .npm/
@@ -32,6 +30,7 @@ test:
   stage: test
   dependencies:
     - build
+    - install
   script:
     - npm run cy:ci
   artifacts:
