@@ -9,7 +9,7 @@
     "serve": "json-server db.json",
     "dev": "concurrently \"npm run watch\" \"npm run serve\"",
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --record",
     "cy:ci": "npx start-server-and-test serve http://localhost:3030 cy:run"
   },
   "keywords": [],
