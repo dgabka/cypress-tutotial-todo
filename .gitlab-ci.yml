@@ -32,13 +32,29 @@ build:
   dependencies:
     - install
 
-test:
+test:electron:
   stage: test
   dependencies:
     - build
     - install
   script:
     - npm run cy:ci
+  artifacts:
+    when: on_failure
+    expire_in: '1 week'
+    untracked: true
+    paths:
+      - cypress/videos
+      - cypress/screenshots
+
+test:chrome:
+  stage: test
+  image: cypress/browsers:node12.13.0-chrome78-ff70
+  dependencies:
+    - build
+    - install
+  script:
+    - npm run cy:ci:chrome
   artifacts:
     when: on_failure
     expire_in: '1 week'

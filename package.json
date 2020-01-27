@@ -10,7 +10,9 @@
     "dev": "concurrently \"npm run watch\" \"npm run serve\"",
     "cy:open": "cypress open",
     "cy:run": "cypress run --record",
-    "cy:ci": "npx start-server-and-test serve http://localhost:3030 cy:run"
+    "cy:run:chrome": "cypress run --record --browser chrome",
+    "cy:ci": "npx start-server-and-test serve http://localhost:3030 cy:run",
+    "cy:ci:chrome": "npx start-server-and-test serve http://localhost:3030 cy:run:chrome"
   },
   "keywords": [],
   "author": "",
