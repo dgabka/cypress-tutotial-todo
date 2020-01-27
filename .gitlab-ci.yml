@@ -1,5 +1,5 @@
 build:
-  image: node:lts-alpine
+  image: node
   stage: build
   script:
     - npm install
