@@ -9,20 +9,17 @@ variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - .npm
-    - cache/Cypress
-    - node_modules
 
 install:
   stage: install
   script:
     - npm ci
-    - npx cypress cache path
-    - npx cypress cache list
-    - npm run cy:verify
+  artifacts:
+    expire_in: 60 mins
+    paths:
+      - .npm/
+      - node_modules/
+      - cache/Cypress
 
 build:
   stage: build
