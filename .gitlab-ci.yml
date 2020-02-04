@@ -32,7 +32,7 @@ build:
   dependencies:
     - install
 
-test:electron:
+.test:electron:
   stage: test
   dependencies:
     - build
@@ -62,3 +62,10 @@ test:chrome:
     paths:
       - cypress/videos
       - cypress/screenshots
+
+electrons-1:
+  extends: .test:electron
+electrons-2:
+  extends: .test:electron
+electrons-3:
+  extends: .test:electron
