@@ -1,4 +1,4 @@
-image: cypress/base
+image: cypress/base:12.14.0
 
 stages:
   - install
@@ -24,7 +24,7 @@ install:
 build:
   stage: build
   script:
-    - CI=false npm run build
+    - npm run build
   artifacts:
     paths:
       - build
@@ -38,6 +38,7 @@ build:
     - build
     - install
   script:
+    - npm run serve &
     - npm run cy:ci
   artifacts:
     when: on_failure
@@ -54,6 +55,7 @@ test:chrome:
     - build
     - install
   script:
+    - npm run serve &
     - npm run cy:ci:chrome
   artifacts:
     when: on_failure
