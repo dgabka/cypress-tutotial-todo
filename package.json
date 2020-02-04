@@ -12,7 +12,8 @@
     "cy:run": "cypress run",
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:ci": "npm run cy:run -- --record --parallel --group \"electrons on GitLab CI\"",
-    "cy:ci:chrome": "npm run cy:run:chrome -- --record"
+    "cy:ci:chrome": "npm run cy:run:chrome -- --record",
+    "cy:verify": "cypress verify"
   },
   "keywords": [],
   "author": "",
